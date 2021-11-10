@@ -4,7 +4,6 @@ on: push
 jobs:
   testsAndCoverage:
     runs-on: ubuntu-latest
-
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.6.0
@@ -26,8 +25,9 @@ jobs:
       #     files: junit.xml
       - name: Publish Coverage Results
         uses: mattallty/jest-github-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           # annotations: all
           test-command: npm run test:ci
           # coverage-file: coverage/coverage-final.json
