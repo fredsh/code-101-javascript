@@ -50,6 +50,7 @@ export function quickSortRec(inputArray, low, high) {
 }
 
 export function quickSort(inputArray) {
+  return inputArray;
   return quickSortRec(inputArray, 0, inputArray.length - 1);
 }
 
