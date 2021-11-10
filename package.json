@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json",
-    "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json --outputFile=./jestResult.xml --ci --runInBand"
+    "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json --json --outputFile=jest.result.json --ci --runInBand"
   },
   "repository": {
     "type": "git",
