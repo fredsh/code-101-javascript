@@ -29,6 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # annotations: all
-          test-command: npm run test:ci
+          test-command: npm run test:ci -- --testLocationInResults --json --coverage --outputFile="jest.results.json"
           # coverage-file: coverage/coverage-final.json
           # skip-step: all
