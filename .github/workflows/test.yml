@@ -25,10 +25,10 @@ jobs:
       #   with:
       #     files: junit.xml
       - name: Publish Coverage Results
-        uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
+        uses: mattallty/jest-github-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          annotations: all
-          test-script: npm run test:ci
+          # annotations: all
+          test-command: npm run test:ci
           # coverage-file: coverage/coverage-final.json
           # skip-step: all
