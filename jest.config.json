@@ -6,7 +6,7 @@
   "coverageReporters": [
     "text",
     "text-summary",
-    "lcov"
+    "json"
   ],
   "collectCoverageFrom": [
     "**/*.js",
