@@ -1,10 +1,9 @@
-name: JS Checks
+name: Tests
 on: push
 
 jobs:
-  tests:
+  testsAndCoverage:
     runs-on: ubuntu-latest
-
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.6.0
@@ -17,10 +16,19 @@ jobs:
           node-version: 16.x
       - name: Install Dependencies
         run: npm install
-      - name: Run tests
-        run: npm run test:ci
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: always()
+      # - name: Run tests
+      #   run: npm run test:ci
+      # - name: Publish Unit Test Results
+      #   uses: EnricoMi/publish-unit-test-result-action@v1
+      #   if: always()
+      #   with:
+      #     files: junit.xml
+      - name: Publish Coverage Results
+        uses: willcaul/jest-github-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: junit.xml
+          # annotations: all
+          test-command: npm run test:ci -- --testLocationInResults --json --coverage --outputFile="jest.results.json"
+          # coverage-file: coverage/coverage-final.json
+          # skip-step: all

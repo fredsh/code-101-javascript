@@ -16,6 +16,6 @@ function testPromise(time) {
     return new Promise(resolve => setTimeout(resolve, time))
 }
 
-function hello() {
-    console.log("hello");
+function hello(name) {
+    console.log("Hello " + name);
 }
