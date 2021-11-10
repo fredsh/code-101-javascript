@@ -2,7 +2,7 @@ name: JS Checks
 on: push
 
 jobs:
-  tests:
+  tests and coverage:
     runs-on: ubuntu-latest
 
     steps:
