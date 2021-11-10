@@ -60,3 +60,8 @@ describe.each([
         expect(output).toEqual(expected);
     });
 });
+
+export const displayName = {
+    name: 'sorting funcs',
+    color: 'blue'
+}

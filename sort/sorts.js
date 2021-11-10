@@ -20,6 +20,10 @@ export function bubbleSort(inputArray) {
   return inputArray;
 }
 
+// function hello() {
+//   console.log("Hello");
+// };
+
 function partition(inputArray, low, high) {
   const pivot = inputArray[high];
   let i = low;

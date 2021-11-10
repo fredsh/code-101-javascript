@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json",
+    "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json --outputFile=./jestResult.xml"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/fredsh/code-101-javascript#readme",
   "devDependencies": {
     "jest": "^27.2.0"
+  },
+  "dependencies": {
+    "jest-junit": "^13.0.0"
   }
 }
