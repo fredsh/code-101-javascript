@@ -15,3 +15,7 @@ timeout(testPromise(1000), 500).then(() => console.log("Test 2 Failed"), () => c
 function testPromise(time) {
     return new Promise(resolve => setTimeout(resolve, time))
 }
+
+function hello(name) {
+    console.log("Hello " + name);
+}
